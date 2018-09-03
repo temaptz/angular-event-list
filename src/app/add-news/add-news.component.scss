@@ -1,0 +1,24 @@
+@import '../styles/variables';
+@import '../styles/buttons';
+@import '../styles/inputs';
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  label {
+    display: block;
+    width: 50%;
+    min-width: 300px;
+
+    input,
+    textarea {
+      margin: 10px 0 20px 0;
+    }
+  }
+
+  button {
+    margin-top: 30px;
+  }
+}

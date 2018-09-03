@@ -1,0 +1,9 @@
+<ul>
+    <ng-container *ngFor="let message of messagesService.messages">
+        <li *ngIf="message.visible"
+            class="{{ message.type }}"
+        >
+            <p>{{ message.text }}</p>
+        </li>
+    </ng-container>
+</ul>

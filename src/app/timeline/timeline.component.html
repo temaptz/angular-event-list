@@ -1,0 +1,39 @@
+<div class="sorting">
+    Сортировать:
+    <ul>
+        <li>
+            <a (click)="sortEventsBy('date')"
+               [ngClass]="{'selected': (sortBy === 'date')}"
+            >
+                По дате
+            </a>
+        </li>
+        <li>
+            <a (click)="sortEventsBy('type')"
+               [ngClass]="{'selected': (sortBy === 'type')}"
+            >
+                По типу события
+            </a>
+        </li>
+    </ul>
+</div>
+
+<ul class="event-list">
+    <ng-container *ngFor="let event of events">
+        <li *ngIf="!event.deleted">
+            <div [ngSwitch]="event.type">
+
+                <app-news
+                        *ngSwitchCase="TYPE_NEWS"
+                        [news]="event">
+                </app-news>
+
+                <app-transaction
+                        *ngSwitchCase="TYPE_TRANSACTION"
+                        [transaction]="event">
+                </app-transaction>
+
+            </div>
+        </li>
+    </ng-container>
+</ul>

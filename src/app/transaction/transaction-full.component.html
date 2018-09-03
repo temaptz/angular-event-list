@@ -1,0 +1,24 @@
+<h1>{{ transaction.isAdvent | boolToStr: 'Приход' : 'Расход' }}</h1>
+
+<p class="amount">
+    {{ transaction.amount }}
+    <span class="currency">
+        {{ transaction.currency }}
+    </span>
+</p>
+
+<div class="details">
+
+    <p class="date">{{ transaction.date | date:"dd.MM.yyyy HH:mm" }}</p>
+
+    <p class="source">От: {{ transaction.source }}</p>
+
+</div>
+
+<button class="remove"
+        (click)="removeTransaction()"
+>
+    Удалить
+</button>
+
+<a class="go-back" (click)="goBack()">Назад</a>

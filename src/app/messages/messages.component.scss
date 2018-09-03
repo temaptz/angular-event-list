@@ -1,0 +1,58 @@
+@import '../styles/variables';
+
+:host {
+  position: fixed;
+  top: 20px;
+  right: 10px;
+}
+
+ul {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  width: 320px;
+  list-style: none;
+
+  li {
+    display: flex;
+    align-items: center;
+    max-width: 320px;
+    margin-bottom: 15px;
+    //padding: 20px 30px;
+    border-radius: $border-radius;
+
+    &.success {
+      background-color: #27ae60;
+    }
+
+    &.error {
+      background-color: #c0392b;
+    }
+
+    p {
+      padding: 20px 30px;
+      color: #fff;
+      font-size: 19px;
+      font-family: $font-family;
+      text-align: center;
+    }
+  }
+}
+
+@media screen and (max-width: 340px) {
+  :host {
+    top: 10px;
+    left: 10px;
+    right: 10px;
+  }
+
+  ul {
+    width: auto;
+
+    li {
+      width: 100%;
+    }
+  }
+}

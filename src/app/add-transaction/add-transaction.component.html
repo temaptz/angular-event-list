@@ -1,0 +1,64 @@
+<form (ngSubmit)="saveTransaction()">
+
+    <label>
+        Сумма транзакции:
+        <input type="text"
+               [(ngModel)]="transaction.amount"
+               name="amount"
+               placeholder="Сумма..."
+        >
+    </label>
+
+    <label>
+        Валюта:
+        <select [(ngModel)]="transaction.currency"
+                name="currency"
+        >
+            <option *ngFor="let CURRENCY of CURRENCIES"
+                    [ngValue]="CURRENCY">
+                {{ CURRENCY }}
+            </option>
+        </select>
+    </label>
+
+    <label>
+        От кого:
+        <input type="text"
+               [(ngModel)]="transaction.source"
+               name="source"
+               placeholder="От..."
+        >
+    </label>
+
+    <label>
+        Описание:
+        <input type="text"
+               [(ngModel)]="transaction.description"
+               name="description"
+               placeholder="Описание..."
+        >
+    </label>
+
+    <label>
+        Приход или расход:
+        <input type="checkbox"
+               [(ngModel)]="transaction.isAdvent"
+               name="isAdvent"
+        >
+    </label>
+
+    <button type="submit"
+            class="create"
+            [disabled]="(
+                !transaction.amount
+                || !transaction.currency
+                || !transaction.source
+                || !transaction.description
+                || transaction.isAdvent === undefined
+                || transaction.currency.length === 0
+                || transaction.source.length === 0
+                || transaction.description.length === 0
+                )"
+    >Сохранить</button>
+
+</form>

@@ -1,0 +1,16 @@
+<a routerLink="/transaction/{{ transaction.id }}"
+   [ngClass]="{'advent': transaction.isAdvent}"
+>
+    <div class="advent">
+        {{ transaction.isAdvent | boolToStr: '+' : '-' }}
+    </div>
+
+    <div class="amount">
+        {{ transaction.amount }}
+        <span class="value">{{ transaction.currency }}</span>
+    </div>
+
+    <div class="source">От: {{ transaction.source }}</div>
+
+    <div class="date">{{ transaction.date | date:"dd.MM.yyyy HH:mm" }}</div>
+</a>

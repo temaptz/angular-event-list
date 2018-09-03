@@ -1,0 +1,22 @@
+<header>
+    <h1>Таймлайн событий</h1>
+    <nav>
+        <ul>
+            <li>
+                <a routerLink="/timeline" routerLinkActive="active">Список событий</a>
+            </li>
+            <li>
+                <a routerLink="/add-news" routerLinkActive="active">Добавление новости</a>
+            </li>
+            <li>
+                <a routerLink="/add-transaction" routerLinkActive="active">Добавление транзакции</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <router-outlet></router-outlet>
+</main>
+
+<app-messages></app-messages>

@@ -1,0 +1,56 @@
+@import '../../styles/variables';
+
+:host {
+  display: block;
+  max-width: 100%;
+  border-radius: $border-radius;
+}
+
+a {
+  display: block;
+  position: relative;
+  margin-bottom: $events-margin;
+  padding: 20px 60px 10px 20px;
+  border-radius: $border-radius;
+  background-color: $transaction-background-color;
+  text-decoration: none;
+  transition: $background-color-transition;
+
+  &.advent {
+    background-color: $transaction-advent-background-color;
+    opacity: .7;
+
+    &:hover {
+      background-color: darken($transaction-advent-background-color, $hovered-item-background-darken);
+    }
+  }
+
+  &:hover {
+    background-color: darken($transaction-background-color, $hovered-item-background-darken);
+  }
+
+  * {
+    color: #ecf0f1;
+  }
+
+  .advent {
+    position: absolute;
+    top: 1px;
+    right: 10px;
+    font-size: 70px;
+  }
+
+  .amount {
+    font-size: 35px;
+    margin-bottom: 10px;
+  }
+
+  .source {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+
+  .date {
+    font-size: 16px;
+  }
+}

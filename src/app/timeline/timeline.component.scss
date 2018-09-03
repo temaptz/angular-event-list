@@ -1,0 +1,43 @@
+@import '../styles/variables';
+
+.sorting {
+  display: flex;
+  justify-content: flex-start;
+  padding: 15px 0;
+
+  ul {
+    display: flex;
+    justify-content: flex-start;
+    list-style: none;
+
+    li {
+      margin-left: 10px;
+
+      a {
+        display: block;
+        padding: 3px 10px;
+        background-color: $main-background-color;
+        cursor: pointer;
+        transition: $background-color-transition;
+
+        &.selected {
+          background-color: darken($main-background-color, $active-item-background-darken);
+        }
+
+        &:hover {
+          background-color: darken($main-background-color, $hovered-item-background-darken);
+        }
+      }
+    }
+  }
+}
+
+ul.event-list {
+  list-style: none;
+
+  li {
+    &>div {
+      position: relative;
+    }
+  }
+}

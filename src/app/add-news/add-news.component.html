@@ -1,0 +1,32 @@
+<form (ngSubmit)="saveNews()">
+
+    <label>
+        Заголовок новости:
+        <input type="text"
+               [(ngModel)]="news.title"
+               name="title"
+               placeholder="Заголовок..."
+        >
+    </label>
+
+
+    <label>
+        Содержание новости:
+        <textarea [(ngModel)]="news.content"
+                  name="content"
+                  placeholder="Содержание..."
+                  rows="5">
+        </textarea>
+    </label>
+
+    <button type="submit"
+            class="create"
+            [disabled]="(
+                !news.title
+                || !news.content
+                || news.title.length === 0
+                || news.content.length === 0
+                )"
+    >Сохранить</button>
+
+</form>

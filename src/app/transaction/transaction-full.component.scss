@@ -1,0 +1,30 @@
+@import '../styles/variables';
+@import '../styles/buttons';
+
+h1 {
+  font-size: 45px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.amount {
+  margin-bottom: 20px;
+  font-size: 35px;
+}
+
+.details {
+  display: flex;
+  margin-bottom: 30px;
+  font-size: 19px;
+
+  .date {
+    margin-right: 20px;
+  }
+}
+
+.go-back {
+  display: inline-block;
+  margin-top: 30px;
+  font-size: 16px;
+  text-decoration: underline;
+}
